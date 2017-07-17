@@ -1,2 +1,2 @@
 # js
-let'S see.
+Let us see.
