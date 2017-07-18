@@ -1,0 +1,32 @@
+{"LernkarteiDB": [
+
+    {"Vokabel_skt": [
+        {"ulūka-": [
+            {"K": {
+                "Kapitel": "18",
+                "Wortform": "m", 
+                "eng": ["owl"]
+            }},
+            {"S": {
+                "deu": ["Eule"]
+            }}
+        ]},
+        {"pāntha-": [
+            {"K": {
+                "Kapitel": "",
+                "Wortform": "", 
+                "eng": []
+            }},
+            {"S": {
+                "deu": ["Reisender",  "Wanderer"]
+            }}
+        ]}
+    ]},
+
+    {"Quellen": [
+        {"K":"Killingley"},
+        {"pw":"Kleines Petersburger Wörterbuch"},
+        {"PGW":"Großes Petersburger Wörterbuch"},
+        {"S":"Sivi"}
+    ]}
+]}
