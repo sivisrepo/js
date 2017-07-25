@@ -6,59 +6,25 @@
     <link rel="stylesheet" href="">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script>
-
-        $(document).ready( function(){
-            console.log("Hello sivi");
-            /* $("div").html(" <b>Appended text</b>."); */
-
-            $("#skt").html(json2html( readTextFile("lernkarteiDB.json", function(text){
-                var data = JSON.parse(text);
-                console.log(data);
-                return data;
-                }) ));
-
-        });
+        /* $.getJSON( "lernkarteiDB.json", function( data ) {
+            var items = [];
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+            });
+            
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+        }); */
         
-        // https://stackoverflow.com/posts/34579496/revisions
-        function readTextFile(file, callback) {
-            var rawFile = new XMLHttpRequest();
-            rawFile.overrideMimeType("application/json");
-            rawFile.open("GET", file, true);
-            rawFile.onreadystatechange = function() {
-                if (rawFile.readyState === 4 && rawFile.status == "200") {
-                    callback(rawFile.responseText);
-                }
-            }
-            rawFile.send(null);
-        }
-        //usage:
-        readTextFile("lernkarteiDB.json", function(text){
-            var data = JSON.parse(text);
-            console.log(data);
-            return data;
-        }); 
-        
-        function json2html(json) {
-            var i, ret = document.createElement('ul'), li;
-            for( i in json) {
-                li = ret.appendChild(document.createElement('li'));
-                li.appendChild(document.createTextNode(i+": "));
-                if( typeof json[i] === "object") li.appendChild(json2html(json[i]));
-                else li.firstChild.nodeValue += json[i];
-            }
-            return ret;
-        }
-
-        $( "#skt" ).click(function() {
-        var htmlString = $( this ).html();
-        console.log(htmlString)
-        $( this ).html( "nachher" );
+        /* https://www.w3schools.com/jquery/jquery_ajax_load.asp */
+        $(document).ready(function(){
+            $("#skt").load("lernkarteiDB.json");
         });
-
     </script>
 </head>
 <body>
-    <p>OvO</p>
     <div id="skt">vorher</div>
 </body>
 </html>
