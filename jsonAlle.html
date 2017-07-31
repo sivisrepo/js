@@ -6,47 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
     <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="bower_components/rivets/dist/rivets.bundled.min.js"></script>
+    <script src="js/rivets.bundled.min.js"></script>
     <script>
 $(document).ready(function(){
-    $("#skt").load("lernkarteiDB.json"); 
+    //$("#skt").load("lernkarteiDB.json"); 
+
+    $.getJSON( "lernkarteiDB.json", function( data ) {
+        var items = [];
+        $.each( data, function( key, val ) {
+            items.push( "<li id='" + key + "'>" + val + "</li>" );
+        });
+        
+        $( "<ul/>", {
+            "class": "my-new-list",
+            html: items.join( "" )
+        }).appendTo( "body" );
+    });
+
+
 });
+
+
 </script>
     <title>Zeige alle Einträge der JSON DB</title>
 </head>
 <body>
-    <!-- Zeige alle Einträge der jsonDB. Frage: wann?
-    Von Anbeginn oder 
-    bei Interaktivität.
-    
-    Vgl dazu Flash: für Interaktivität ist nötig:
-        Ein __Ereignis__, das die Aktion auslöst,
-            . absichtlich (Ereignis wie Tastendruck, Mausklick, Bildereignis (stop/goto), 
-              Filmsequenzeregnis),
-                [Welches __Objekt__ das Ereignis erfährt. Womit interagiert wurde, 
-                zB Button mit Klick, Tastatur mit Press == jQ selector?]
-            . zeitabhängig (nach Zeitpanne oder zum Zeitpunkt x).
-        das __Ziel__, auf das die Aktion gerichtet ist (wer soll Aktion ausführen) - das Objekt:
-            . aktueller Film und Zeitleiste zB Filminstanzen,
-            . anderer Film und deren Zeitleisten,
-            . andere Anwendungen zB Browser. 
-        die __Aktion__ selbst (was soll ausgeführt werden) - die Methode,
-            GoTo, Play, Stop, StopAllSounds, LoadMovie, IfFrameIsLoaded, OnMouseEvent[Aktion bzw Event].
-    
-    https://www.w3schools.com/jquery/jquery_syntax.asp:
-    With jQuery you select (query) HTML elements and perform "actions" on them.
-    Basic syntax is: $(selector).action()
-    
-    Sobald wie möglich: wenn dom, img, js geladen sind
-
-
-    https://www.w3schools.com/jquery/jquery_ajax_load.asp
-    $(selector).load(URL,data,callback); 
-
-    https://api.jquery.com/category/events/
-    
-     -->
-<div id="skt">Daten kommen hierher.</div>
+    <div id="skt">Daten kommen hierher.</div>
     
 </body>
 </html>
