@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lernkartei</title>
+    <link rel="stylesheet" href="css/kartei.css">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script>
+         /* Wieso braucht $.getJSON() kein $(document).ready() ? */
+         $.getJSON( "kartei.json", function( data ) { 
+             console.log("Anzahl keys: " + Object.keys(data).length);
+             console.log($(data));
+             $.each(data, function(k, v){
+                 $("<tr> \
+                 <td><i>" + k + "</i></td> \
+                 <td>(" + v[0] + ")</td> \
+                 <td>" + v[1] + "</td> \
+                 <td>(" + v[2] + ")</td> \
+                 </tr>").appendTo("#kartei");
+             });
+        }); 
+    </script>
+</head>
+<body>
+     <table id="kartei"></table> 
+</body>
+</html>
