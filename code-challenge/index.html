@@ -9,12 +9,6 @@
         .wrapper li {
             margin-bottom: 0.75em;
         }
-        
-        .button-holder {
-            padding: 0.5em;
-            background-color: #adb7bc;
-            
-        }
     </style>
 </head>
 <body>
@@ -43,22 +37,22 @@
         <li><em>beforeClose</em> - eine callback Funktion, die aufgerufen wird, wenn das Dialogfenster geschlossen werden soll (Klick auf das Kreuz in der Titelzeile). Diese muss true oder false zurückgeben. Gibt sie true zurück, wird das Dialogfenster geschlossen, gibt sie false zurück, bleibt es geöffnet.</li>
     </ul>
     
+    <p>Nachstehender Link öffnet einen Beispiel-Dialog: <button class="pure-button pure-button-primary" id="exampleDialog">Beispiel Dialog öffnen</button></p>
+    
     <p>Den Code dafür finden Sie in main.js</p>
     
     
-    
     <h2>Aufgaben</h2>
-    <p class="button-holder">Nachstehender Link öffnet den Beispiel-Dialog: <button class="pure-button pure-button-primary" id="exampleDialog">Beispiel-Dialog öffnen</button></p>
-    <ol>
-        <li>In der Datei  &ldquo;main.js&rdquo; befinden sich vier Fehler, die das Öffnen des Beispiel-Dialogs verhindern. Finden Sie diese und ermöglichen Sie das erfolgreiche Öffnen des Dialogs per Klick auf das obige Element mit der ID "exampleDialog"</li>
+    <ul>
+        <li>In der Datei  &ldquo;main.js&rdquo; befinden sich vier Fehler, die das Öffnen des Beispieldialogs verhindern. Finden Sie diese und ermöglichen Sie das erfolgreiche Öffenen des Dialogs per Klick auf das Element mit der ID "exampleDialog"</li>
         <li>Per Klick auf den Link &ldquo;Login&rdquo; im Header der Datei soll ein Dialogfenster geöffnet werden, das die Datei &ldquo;login.html&rdquo; lädt. Nutzen Sie dazu das eingebundene &ldquo;ModalWin&rdquo; Objekt.</li>
-        <li>Nach dem erfolgreichen Laden von &ldquo;login.html&rdquo; erstellen Sie rechts neben dem Submit input einen Reset input mit den Klassen &ldquo;pure-button&rdquo; und &ldquo;pure-button-primary&rdquo;. Dieser soll nach links einen Außenabstand von 20px erhalten.</li>
+        <li>Nach dem erfolgreichen Laden von &ldquo;login.html&rdquo; erstellen Sie rechts neben dem Submit input einen Reset input mit den Klassen &ldquo;pure-button&rdquo; &ldquo;pure-button-primary&rdquo;. Dieser soll nach links einen Außenabstand von 20px erhalten.</li>
         <li>Nutzen Sie die &ldquo;beforeClose&rdquo; Option des Dialogs (siehe obige Angaben!), um die User das Schließen per Javascript Popup bestätigen zu lassen: &ldquo;Login wirklich schließen?&rdquo;. Wenn die User OK klicken, wird der Dialog geschlossen, ansonsten bleibt er geöffnet.</li>
-    </ol>
+    </ul>
     
      <p>
         <img src="img/login-screen.png" alt=""><br>
-        <em>Das geöffnete Dialogfenster mit geladener login.html und dem bereits eingefügten Reset input</em>
+        <em>Das geöffnete Dialogfenster</em>
     </p>
 </main> 
 <script src="js/my-ajax.js"></script>  
