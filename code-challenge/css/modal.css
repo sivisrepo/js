@@ -1,0 +1,62 @@
+/* Modal Window */
+.mw-overlay{position:fixed;z-index:9998;top:0;left:0;bottom:0;right:0;opacity:0;transition:1ms opacity ease;background:rgba(0,0,0,0.6)}.mw-modal{position:fixed;z-index:9999;top:50%;left:50%;opacity:0;width:94%;max-height:90%;padding:0.5em;transition:1ms opacity ease;transform:translate(-50%, -50%);border-radius:4px;background:#fff}.mw-modal.mw-open.mw-anchored{top:20px;transform:translate(-50%, 0)}.mw-modal.mw-open{opacity:1; min-height: 300px;}.mw-overlay.mw-open{opacity:1}.mw-close-button{font-family:Helvetica,Arial,sans-serif;font-size:20px;line-height:20px;font-weight:700;position:absolute;top:5px;right:5px;cursor:pointer;color:#fff;border:0;outline:none;background:#999;border-radius:4px}.mw-close-button:hover{background-color:gray}.mw-modal-title{height:2em;font-size:1.2em;line-height:2em;padding:0 0.5em;background-color:#EAEAEA;border-radius:4px;position:relative}.mw-modal-content{position:absolute;left:0.5em;right:0.5em;bottom:0.5em;top:3em;padding:0.5em;overflow:auto;margin-top:0.5em;background-color:#EDEDED}.mw-overlay.fade-and-drop{display:block;opacity:0}.mw-modal.fade-and-drop{top:-300%;opacity:1;display:block}.mw-modal.fade-and-drop.mw-open{top:50%;transition:500ms top 500ms ease}.mw-modal.fade-and-drop.mw-open.mw-anchored{transition:500ms top 500ms ease}.mw-overlay.fade-and-drop.mw-open{top:0;transition:500ms opacity ease;opacity:1}.mw-modal.fade-and-drop{transition:500ms top ease}.mw-overlay.fade-and-drop{transition:500ms opacity 500ms ease}html{box-sizing:border-box}*{box-sizing:inherit}
+
+/* Site Styles */
+
+.wrapper {
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.site-header {
+    height: 3rem;
+    background-color: #424242;
+    padding: 0 1rem;
+}
+
+.site-header h1 {
+    display: inline-block;
+    float: left;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+.navi-header {
+    float: right;
+}
+
+.navi-header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navi-header li {
+    display: inline-block;
+    margin-right: 0.5rem;
+    line-height: 3rem;
+}
+
+.navi-header a {
+    color: #FFF;
+    display: block;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.navi-header a:active,
+.navi-header a:hover,
+.navi-header a:focus {
+    color: #CCC;
+    text-decoration: underline;
+}
+
+
+
+
+
