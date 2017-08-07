@@ -2,36 +2,65 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
+    <title>Lernkartei</title>
+    <link rel="stylesheet" href="">
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/rivets.bundled.min.js"></script>
     <script>
-$(document).ready(function(){
-    //$("#skt").load("lernkarteiDB.json"); 
-
-    $.getJSON( "lernkarteiDB.json", function( data ) {
-        var items = [];
-        $.each( data, function( key, val ) {
-            items.push( "<li id='" + key + "'>" + val + "</li>" );
+        $(document).ready(function() {
+          var $ul = $("<ul>");
+          $.getJSON("lernkarteiDB.json", function(data) {
+            $.each(data.LernkarteiDB[0].Vokabel_skt, function(key, value) {
+              $.each(value, function(key, value) {
+                var $li = $("<li>");
+                $li.text(key);
+                $ul.append($li);
+              });
+            });
+          });
+          $("body").append($ul);
+          // ----------------------------------------------------------------------------------------------------
+          $.getJSON("lernkarteiDB.json", function(data) {
+            var vokabeln = [];
+            $.each(data.LernkarteiDB[0].Vokabel_skt, function(key, value) {
+              $.each(value, function(key, value) {
+                vokabeln.push({
+                  name: key
+                });
+              });
+            });
+            console.log(vokabeln);
+            rivets.bind($("#rivets"), {
+              vokabeln: vokabeln
+            });
+          });
         });
-        
-        $( "<ul/>", {
-            "class": "my-new-list",
-            html: items.join( "" )
-        }).appendTo( "body" );
-    });
-
-
-});
-
-
-</script>
-    <title>Zeige alle Einträge der JSON DB</title>
+        /*
+        $.getJSON( "lernkarteiDB.json", function( data ) {
+            var items = [];
+            $.each( data, function( key, val ) {
+                items.push( "<li id='" + key + "'>" + val + "</li>" );
+            });
+            $( "<ul/>", {
+                "class": "my-new-list",
+                html: items.join( "" )
+            }).appendTo( "body" );
+        });
+        */
+        /* https://www.w3schools.com/jquery/jquery_ajax_load.asp */
+        /*$(document).ready(function(){
+            $("#skt").load("lernkarteiDB.json");
+        });*/
+    </script>
 </head>
 <body>
-    <div id="skt">Daten kommen hierher.</div>
-    
+    <div id="skt">vorher</div>
+    <div id="rivets">
+      <ul>
+        <li rv-each-vokabel="vokabeln">
+          <span>{ vokabel.name }</span>
+        </li>
+      </ul>
+    </div>
 </body>
 </html>

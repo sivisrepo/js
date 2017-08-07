@@ -1,32 +1,36 @@
-{"LernkarteiDB": [
-
-    {"Vokabel_skt": [
-        {"ulūka-": [
-            {"K": {
-                "Kapitel": "18",
-                "Wortform": "m", 
-                "eng": ["owl"]
-            }},
-            {"S": {
-                "deu": ["Eule"]
-            }}
-        ]},
-        {"pāntha-": [
-            {"K": {
-                "Kapitel": "",
-                "Wortform": "", 
-                "eng": []
-            }},
-            {"S": {
-                "deu": ["Reisender",  "Wanderer"]
-            }}
-        ]}
-    ]},
-
-    {"Quellen": [
-        {"K":"Killingley"},
-        {"pw":"Kleines Petersburger Wörterbuch"},
-        {"PGW":"Großes Petersburger Wörterbuch"},
-        {"S":"Sivi"}
-    ]}
-]}
+[
+  {
+    "Sprache": "skt",
+    "Vokabel": "ulūka-",
+    "Übersetzungen": [
+      {
+        "Sprache": "eng",
+        "Vokabel": "owl",
+        "Quelle": "K",
+        "Kapitel": "18",
+        "Wortform": "m"
+      },
+      {
+        "Sprache": "deu",
+        "Vokabel": "Eule",
+        "Quelle": "S"
+      }
+    ]
+  },
+  {
+    "Sprache": "skt",
+    "Vokabel": "pāntha-",
+    "Übersetzungen": [
+      {
+        "Sprache": "deu",
+        "Vokabel": "Reisender",
+        "Quelle": "S"
+      },
+      {
+        "Sprache": "deu",
+        "Vokabel": "Wanderer",
+        "Quelle": "S"
+      }
+    ]
+  }
+]

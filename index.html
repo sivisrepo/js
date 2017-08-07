@@ -5,26 +5,27 @@
     <title>Lernkartei</title>
     <link rel="stylesheet" href="">
     <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="bower_components/rivets/dist/rivets.bundled.min.js"></script>
     <script>
-        /* $.getJSON( "lernkarteiDB.json", function( data ) {
+         $.getJSON( "kartei.json", function( data ) {
             var items = [];
             $.each( data, function( key, val ) {
-                items.push( "<li id='" + key + "'>" + val + "</li>" );
+                items.push( "<li id='" + key + "'>" + key + " : " + val + "</li>" );
             });
             
             $( "<ul/>", {
                 "class": "my-new-list",
-                html: items.join( "" )
+                html: items.join( "\n" )
             }).appendTo( "body" );
-        }); */
+        }); 
         
         /* https://www.w3schools.com/jquery/jquery_ajax_load.asp */
-        $(document).ready(function(){
+        /* $(document).ready(function(){
             $("#skt").load("lernkarteiDB.json");
-        });
+        }); */
     </script>
 </head>
 <body>
-    <div id="skt">vorher</div>
+    <!-- <div id="skt">vorher</div> -->
 </body>
 </html>
